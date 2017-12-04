@@ -6,7 +6,7 @@
  * Copyright 2013- Alan Hong. and other contributors
  * summernote may be freely distributed under the MIT license./
  *
- * Date: 2017-09-09T11:03Z
+ * Date: 2017-12-04T08:49Z
  */
 (function (factory) {
   /* global define */
@@ -4408,6 +4408,7 @@
       }).on('focus', function (event) {
         context.triggerEvent('focus', event);
       }).on('blur', function (event) {
+        context.invoke('editor.saveRange')
         context.triggerEvent('blur', event);
       }).on('mousedown', function (event) {
         context.triggerEvent('mousedown', event);

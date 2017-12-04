@@ -59,6 +59,7 @@ define([
       }).on('focus', function (event) {
         context.triggerEvent('focus', event);
       }).on('blur', function (event) {
+        context.invoke('editor.saveRange')
         context.triggerEvent('blur', event);
       }).on('mousedown', function (event) {
         context.triggerEvent('mousedown', event);
