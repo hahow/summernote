@@ -1,12 +1,12 @@
 /**
- * Super simple wysiwyg editor v0.8.9
+ * Super simple wysiwyg editor v0.8.12
  * http://summernote.org/
  *
  * summernote.js
  * Copyright 2013- Alan Hong. and other contributors
  * summernote may be freely distributed under the MIT license./
  *
- * Date: 2017-12-04T09:07Z
+ * Date: 2017-12-06T12:53Z
  */
 (function (factory) {
   /* global define */
@@ -4406,6 +4406,7 @@
       }).on('keyup', function (event) {
         context.triggerEvent('keyup', event);
       }).on('focus', function (event) {
+        context.invoke('restoreRange');
         context.triggerEvent('focus', event);
       }).on('blur', function (event) {
         context.invoke('editor.saveRange');
@@ -4493,7 +4494,6 @@
      * @return {WrappedRange}
      */
     this.createRange = function () {
-      this.focus();
       return range.create(editable);
     };
 
@@ -7387,7 +7387,7 @@
 
       var body = [
         '<p class="text-center">',
-        '<a href="http://summernote.org/" target="_blank">Summernote 0.8.9</a> · ',
+        '<a href="http://summernote.org/" target="_blank">Summernote 0.8.12</a> · ',
         '<a href="https://github.com/summernote/summernote" target="_blank">Project</a> · ',
         '<a href="https://github.com/summernote/summernote/issues" target="_blank">Issues</a>',
         '</p>'
@@ -7735,7 +7735,7 @@
 
 
   $.summernote = $.extend($.summernote, {
-    version: '0.8.9',
+    version: '0.8.12',
     ui: ui,
     dom: dom,
 
