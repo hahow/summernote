@@ -57,6 +57,7 @@ define([
       }).on('keyup', function (event) {
         context.triggerEvent('keyup', event);
       }).on('focus', function (event) {
+        context.invoke('restoreRange');
         context.triggerEvent('focus', event);
       }).on('blur', function (event) {
         context.invoke('editor.saveRange');
@@ -144,7 +145,6 @@ define([
      * @return {WrappedRange}
      */
     this.createRange = function () {
-      this.focus();
       return range.create(editable);
     };
 
